@@ -3079,44 +3079,12 @@ function Library:CreateWindow(...)
         });
 
         local TabButtonLabel = Library:CreateLabel({
-    Position = UDim2.new(0, 0, 0, 0);
-    Size = UDim2.new(1, 0, 1, -1);
-    Text = Name;
-    ZIndex = 1;
-    Parent = TabButton;
-});
-
-local Underline = Library:Create('Frame', {
-    Name = "LithiumUnderline";
-    Size = UDim2.new(1, 0, 0, 2);
-    Position = UDim2.new(0, 0, 1, -2);
-    BorderSizePixel = 0;
-    Visible = false;
-    ZIndex = 10;
-    Parent = TabButton;
-});
-
-Library:AddToRegistry(Underline, {
-    BackgroundColor3 = "AccentColor"
-})
-
-TabButton.MouseButton1Click:Connect(function()
-    for _, v in pairs(TabButton.Parent:GetChildren()) do
-        if v:IsA("GuiButton") and v:FindFirstChild("LithiumUnderline") then
-            v.LithiumUnderline.Visible = false
-            if v:FindFirstChildOfClass("TextLabel") then
-                v:FindFirstChildOfClass("TextLabel").TextColor3 = Library.FontColor
-            end
-        end
-    end
-    Underline.Visible = true
-    TabButtonLabel.TextColor3 = Library.AccentColor
-end)
-
-if Name == "Main" then
-    Underline.Visible = true
-    TabButtonLabel.TextColor3 = Library.AccentColor
-end
+            Position = UDim2.new(0, 0, 0, 0);
+            Size = UDim2.new(1, 0, 1, -1);
+            Text = Name;
+            ZIndex = 1;
+            Parent = TabButton;
+        });
 
         local Blocker = Library:Create('Frame', {
             BackgroundColor3 = Library.MainColor;
