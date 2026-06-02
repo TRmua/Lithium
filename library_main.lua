@@ -3079,22 +3079,6 @@ function Library:CreateWindow(...)
         });
 
         local TabButtonLabel = Library:CreateLabel({
-            Position = UDim2.new(0, 0, 0, 0);
-            Size = UDim2.new(1, 0, 1, -1);
-            Text = Name;
-            ZIndex = 1;
-            Parent = TabButton;
-        });
-
-        local TabButtonLabel = Library:CreateLabel({
-    Position = UDim2.new(0, 0, 0, 0);
-    Size = UDim2.new(1, 0, 1, -1);
-    Text = Name;
-    ZIndex = 1;
-    Parent = TabButton;
-});
-
-local TabButtonLabel = Library:CreateLabel({
     Position = UDim2.new(0, 0, 0, 0);
     Size = UDim2.new(1, 0, 1, -1);
     Text = Name;
@@ -3129,7 +3113,7 @@ TabButton.MouseButton1Click:Connect(function()
     TabButtonLabel.TextColor3 = Library.AccentColor
 end)
 
-if #TabButton.Parent:GetChildren() == 1 then
+if Name == "Main" then
     Underline.Visible = true
     TabButtonLabel.TextColor3 = Library.AccentColor
 end
